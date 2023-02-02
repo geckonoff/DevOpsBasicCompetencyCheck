@@ -16,4 +16,4 @@ sudo ansible-playbook playbook.yml
 
 SSH to container
 
-ssh -i ssh_test/id_rsa root@<IP ADDRESS CONTAINER>
+ssh -i ssh_test/id_rsa root@"<IP ADDRESS CONTAINER>"
