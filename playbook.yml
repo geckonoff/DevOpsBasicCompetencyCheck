@@ -1,0 +1,14 @@
+---
+  - name: "Playing This"
+    hosts: localhost
+    become: yes
+    connection: local 
+    tasks:
+    - name: Copy "world.txt" into existing container at /world.txt
+      shell: docker cp src/world.txt devops-test-container:/world.txt
+
+    - name: "Concatenate contents of /hello.txt /world.txt into new file /hello_world.txt."
+      shell: docker exec -i devops-test-container bash -c "cat hello.txt world.txt | tr '\n' ' ' > /hello_world.txt"
+    
+    - name: "Copy `devops-test-container:/world.txt` back to local file system."
+      shell: docker cp devops-test-container:/world.txt ./world.txt
