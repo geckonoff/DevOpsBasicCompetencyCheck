@@ -12,7 +12,7 @@ Run commands
 
 ./run-docker-container.sh
 
-ansible-playbook playbook.yml
+sudo ansible-playbook playbook.yml
 
 SSH to container
 
